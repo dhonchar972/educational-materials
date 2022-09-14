@@ -1,0 +1,104 @@
+Java:
+0. types
+1. reverse array, list
+2. collections, search speed, algorithm complexity, how it works "under the hood", it methods, create custom, stack(FILO, LIFO), bubble sort, Dijkstra’s algorithm, divide and conquer, binary search
+3. exceptions(checked, unchecked), how to find type, create custom, stackoverflow and how to throw it,
+4. optional, it methods, orElse, orElseGet
+5. lambdas, functional interfaces, how it works "under the hood", popular standard implementations, packing and unpacking
+6. stream API, intermediate and terminal functions, collectors
+7. multithreading, async, concurrency, locking, sync primitives, volatile, atomic, ForkJoinPool, FixedThreadPool, ExecutorService, Runnable, Callable, Future, CompletableFuture
+9. anotations, reflection
+10. patterns
+11. lombok
+12. WeakReference, SoftReference
+13. regex
+14. OOP, SOLID, DRY, KISS
+15. GC, finalize, 
+16. Phaser API
+17. serialization and marshaling
+18. CAS
+19. types, final, static, stack, heep, class Object, it method's, equals, hashcode
+20. file read/write, stream read/write, 
+
+Spring:
+1. DI and IoC, been scope, application context
+2. AOP, proxy, transactions, isolation levels, locking, versioning, propagation, Optimistic vs pessimistic lock
+3. validation
+4. testing
+5. security, authorization, authorization errors,  TLS(mTLS), JWT(JSON Web Token), certificates
+6. boot, configurations
+7. REST, routing, http request, what consist, requests, responce
+8. messaging
+9. WebSocket
+10. Reactor, WebFlux, RSocket
+11. integration and cloud, cloud stream
+12. project structure, controllers, DAO, services, repositories, servlet, servlet dispatcher
+13. data, jdbc, jpa, hibernate, difference between first and second level cache, n+1 select problem, join, fetch, eager, lazy
+14. flyway
+15. caching
+
+SQL:
+1. remove all usernames with duplicates
+"select username from users group by username having(count(id>1));"
+2. transaction
+3. foreign key, primary key, references, oneToMany, oneToOne, constraints, index
+4. find all card's by users id's
+"select * from cards where cards.user_id in(4, 67, 122);"
+5. find all user id's, that have more than one card
+"select user_id from cards group by user_id having (count(*) > 1);"
+6. audit columns(CreatedAt, UpdatedAt, CreatedBy, UpdatedBy)
+7. 
+
+GIT:
+1. cherry pick
+2. pull, push, fetch, merge, commit, branch
+
+Microservices:
+1. Docker
+2. massaging
+3. tracing(Spring Cloud Sleuth)
+
+C#:
+0. clr, dotnet
+1. boxing/unboxing
+2. ref / out
+3. class/structure
+4. static class, static constuctor
+5. multithreading, async/await, concurrency, locking, sync primitives
+6. dispose, finalize
+7. GC
+8. LINQ
+9. collections(List, LinkedList, Queue, Stack, Dictionary, ObservableCollection, IEnumerable, IQueryable)
+10. Generic
+11. lambda's, Action, Predicate, Func
+12. exceptions
+13. algorithms
+9. attributes, reflection
+10. patterns
+12. WeakReference, SoftReference
+13. regex
+14. OOP, SOLID, DRY, KISS
+15. readonly, const
+16. using, this, is, as
+17. serialization and marshaling
+18. params
+19. Nullable types
+20. 
+
+EF, Dapper:
+1.
+
+ASP:
+0. ASP
+1. ID, IoC
+2. routing, controllers
+3. validation
+4. AOP, proxy, transactions, isolation levels, locking, versioning
+6. life cycle(application, page)
+7. testing
+8. security, authorization
+9. configurations
+10. REST, http request, what consist, requests, responce
+11. Global.asax??????
+12. state(app, cookie, view, session)
+13. caching
