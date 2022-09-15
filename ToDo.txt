@@ -18,16 +18,17 @@ Java:
 17. serialization and marshaling
 18. CAS
 19. types, final, static, stack, heep, class Object, it method's, equals, hashcode
-20. file read/write, stream read/write, 
+20. file read/write, stream read/write
+21. serialization
 
 Spring:
 1. DI and IoC, been scope, application context
 2. AOP, proxy, transactions, isolation levels, locking, versioning, propagation, Optimistic vs pessimistic lock
 3. validation
 4. testing
-5. security, authorization, authorization errors,  TLS(mTLS), JWT(JSON Web Token), certificates
+5. security, authorization, authorization errors,  SSL vs TLS(mTLS), JWT(JSON Web Token), certificates
 6. boot, configurations
-7. REST, routing, http request, what consist, requests, responce
+7. REST, routing, http request, what consist, requests, responce, model osi, TCP vs UDP
 8. messaging
 9. WebSocket
 10. Reactor, WebFlux, RSocket
