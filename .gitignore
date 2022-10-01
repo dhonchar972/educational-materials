@@ -1,3 +1,5 @@
 patterns.iml
-.idea
+.idea/
 target
+build/
+.gradle/
