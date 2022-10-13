@@ -3,3 +3,6 @@ patterns.iml
 target
 build/
 .gradle/
+.vscode/
+bin/
+obj/
