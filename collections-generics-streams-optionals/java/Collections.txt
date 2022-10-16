@@ -1,0 +1,13 @@
+Most popular:
+    Default:
+        ArrayList - expanding array
+        LinkedList - bidirectional linked list
+        HashMap - map
+        TreeMap - sorted map in form of tree
+        HashSet - set
+        TreeSet - sorted set in form of tree
+
+    Concurrent:
+        CopyOnWriteArrayList
+        ConcurrentHashMap
+        CopyOnWriteArraySet
