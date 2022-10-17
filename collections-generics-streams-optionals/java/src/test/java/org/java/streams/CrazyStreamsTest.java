@@ -1,10 +1,5 @@
 package org.java.streams;
 
-/**
- * @author Dmytro Honchar <dmytro.honchar972@gmail.com>
- * Date: 10/16/2022
- */
-
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -25,12 +20,13 @@ import static org.junit.jupiter.api.Assertions.*;
  * Please note that the helper methods of this test class do not use Stream API intentionally. You should try to find
  * a stream-based solutions for {@link CrazyStreams} by yourself.
  *
- * @author Taras Boychuk
+ * @author Dmytro Honchar <dmytro.honchar972@gmail.com>
+ * Date: 10/16/2022
  */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class CrazyStreamsTest {
 
-    private static List<Account> accounts = Arrays.asList(
+    private static final List<Account> accounts = Arrays.asList(
             new Account(1L, "Justin", "Butler", "justin.butler@gmail.com",
                     LocalDate.parse("2003-04-17"), Sex.MALE, LocalDate.parse("2016-06-13"), BigDecimal.valueOf(172966)),
             new Account(2L, "Olivia", "Cardenas", "cardenas@mail.com",
@@ -105,7 +101,7 @@ public class CrazyStreamsTest {
     private Map<Boolean, List<Account>> getExpectedMaleMap() {
         Map<Boolean, List<Account>> expectedMap = new HashMap<>(2);
         expectedMap.put(Boolean.TRUE, Arrays.asList(accounts.get(0), accounts.get(2), accounts.get(3)));
-        expectedMap.put(Boolean.FALSE, Arrays.asList(accounts.get(1)));
+        expectedMap.put(Boolean.FALSE, Collections.singletonList(accounts.get(1)));
         return expectedMap;
     }
 
@@ -125,8 +121,8 @@ public class CrazyStreamsTest {
     private Map<String, List<Account>> getExpectedEmailMap() {
         Map<String, List<Account>> expectedEmailMap = new HashMap<>();
         expectedEmailMap.put("gmail.com", Arrays.asList(accounts.get(0), accounts.get(2)));
-        expectedEmailMap.put("mail.com", Arrays.asList(accounts.get(1)));
-        expectedEmailMap.put("yahoo.com", Arrays.asList(accounts.get(3)));
+        expectedEmailMap.put("mail.com", Collections.singletonList(accounts.get(1)));
+        expectedEmailMap.put("yahoo.com", Collections.singletonList(accounts.get(3)));
 
         return expectedEmailMap;
     }

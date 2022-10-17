@@ -206,7 +206,7 @@ class CrazyOptionalsTest {
 
     @Test
     @Order(19)
-    void getAccountShouldReturnProvidedAccount() {
+    void getAccountShouldReturnProvidedAccount() throws AccountNotFoundException {
         Account account = Accounts.generateAccount();
 
         Account receivedAccount = CrazyOptionals.getAccount(() -> Optional.of(account));

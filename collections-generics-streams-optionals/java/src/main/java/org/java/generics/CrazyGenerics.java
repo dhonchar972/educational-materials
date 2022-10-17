@@ -12,6 +12,7 @@ import java.util.Objects;
  * @author Dmytro Honchar <dmytro.honchar972@gmail.com>
  * Date: 10/16/2022
  */
+@SuppressWarnings("ALL")
 public class CrazyGenerics {
     /**
      * {@link Converter} interface declares a typical contract of a converter. It works with two independent generic types.
