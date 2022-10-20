@@ -1,0 +1,7 @@
+Most common collections in C#:
+	- Array
+	- List<T>
+	- LinkedList<T>
+	- HashSet<T>
+	- Dictionary<TKey,TValue>
+
