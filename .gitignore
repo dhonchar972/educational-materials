@@ -4,5 +4,7 @@ target
 build/
 .gradle/
 .vscode/
+.vs/
 bin/
 obj/
+**.DotSettings.user

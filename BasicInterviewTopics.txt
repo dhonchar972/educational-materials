@@ -1,29 +1,24 @@
 Java:
-0. types
-1. reverse array, list
-2. collections, search speed, algorithm complexity, how it works "under the hood", it methods, create custom, stack(FILO, LIFO), bubble sort, Dijkstra’s algorithm, divide and conquer, binary search
-3. exceptions(checked, unchecked), how to find type, create custom, stackoverflow and how to throw it,
-4. optional, it methods, orElse, orElseGet
-5. lambdas, functional interfaces, how it works "under the hood", popular standard implementations, packing and unpacking
-6. stream API, intermediate and terminal functions, collectors
-7. multithreading, async, concurrency, locking, sync primitives, volatile, atomic, ForkJoinPool, FixedThreadPool, ExecutorService, Runnable, Callable, Future, CompletableFuture
-9. anotations, reflection
-10. patterns
-11. lombok
-12. WeakReference, SoftReference
-13. regex
-14. OOP, SOLID, DRY, KISS
-15. GC, finalize, 
-16. Phaser API
-17. serialization and marshaling
-18. CAS
-19. types, final, static, stack, heep, class Object, it method's, equals, hashcode
-20. file read/write, stream read/write
-21. serialization
+1. exceptions(checked, unchecked), how to find type, create custom, stackoverflow and how to throw it
+2. optional, it methods, orElse, orElseGet
+3. lambdas, functional interfaces, how it works "under the hood", popular standard implementations, packing and unpacking
+4. stream API, intermediate and terminal functions, collectors
+5. multithreading, async, concurrency, locking, sync primitives, volatile, atomic, ForkJoinPool, FixedThreadPool, ExecutorService, Runnable, Callable, Future, CompletableFuture
+6. anotations, reflection
+7. patterns
+8. lombok
+9. WeakReference, SoftReference
+10. regex
+11. OOP, SOLID, DRY, KISS
+12. GC, finalize
+13. Phaser API
+14. serialization and marshaling
+15. CAS
+16. file read/write, stream read/write
 
 Spring:
 1. DI and IoC, been scope, application context
-2. AOP, proxy, transactions, isolation levels, locking, versioning, propagation, Optimistic vs pessimistic lock
+2. AOP, proxy, transactions, isolation levels, locking, versioning, propagation, optimistic vs pessimistic lock
 3. validation
 4. testing
 5. security, authorization, authorization errors,  SSL vs TLS(mTLS), JWT(JSON Web Token), certificates
@@ -48,7 +43,6 @@ SQL:
 5. find all user id's, that have more than one card
 "select user_id from cards group by user_id having (count(*) > 1);"
 6. audit columns(CreatedAt, UpdatedAt, CreatedBy, UpdatedBy)
-7. 
 
 GIT:
 1. cherry pick
@@ -60,31 +54,23 @@ Microservices:
 3. tracing(Spring Cloud Sleuth)
 
 C#:
-0. clr, dotnet
-1. boxing/unboxing
+1. clr, dotnet
 2. ref / out
 3. class/structure
 4. static class, static constuctor
 5. multithreading, async/await, concurrency, locking, sync primitives
-6. dispose, finalize
-7. GC
-8. LINQ
-9. collections(List, LinkedList, Queue, Stack, Dictionary, ObservableCollection, IEnumerable, IQueryable)
-10. Generic
-11. lambda's, Action, Predicate, Func
-12. exceptions
-13. algorithms
-9. attributes, reflection
-10. patterns
-12. WeakReference, SoftReference
-13. regex
-14. OOP, SOLID, DRY, KISS
-15. readonly, const
-16. using, this, is, as
-17. serialization and marshaling
-18. params
-19. Nullable types
-20. 
+6. dispose, finalize, GC
+7. LINQ
+8. collections(List, LinkedList, HashSet, Dictionary, Queue, Stack, ObservableCollection, IEnumerable, IQueryable)
+9. generic's
+10. lambda's, delegates, Action, Predicate, Func
+11. exceptions
+12. attributes, reflection
+13. readonly, const
+14. using, this, is, as, in
+15. serialization and marshaling
+16. params
+17. nullable types
 
 EF, Dapper:
 1.
