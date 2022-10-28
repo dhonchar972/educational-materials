@@ -6,7 +6,7 @@ namespace ConsoleAppTests;
 
 public class UnitTest
 {
-    private static readonly ILogger _logger = LoggerFactory.Create(builder => builder.AddConsole()).CreateLogger<UnitTest>();
+    private readonly ILogger _logger = LoggerFactory.Create(builder => builder.AddConsole()).CreateLogger<UnitTest>();
     [Fact]
     public void Test()
     {
