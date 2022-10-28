@@ -1,0 +1,14 @@
+Maven:
+	mvn archetype:generate // by default 1843: maven-archetype-quickstart
+	mvn package
+	java -jar ./target/project-name/project-name.jar
+
+Gradle:
+	gradle init // basic
+	gradle fatJar
+	java -jar ./build/libs/project-name.jar
+
+SpringBoot:
+	https://start.spring.io/
+	gradle bootJar // mvn spring-boot:jar
+	gradle bootRun // mvn spring-boot:run
