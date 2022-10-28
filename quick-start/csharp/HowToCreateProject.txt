@@ -1,0 +1,16 @@
+Console:
+	dotnet new sln -n "SolutionName"
+	dotnet new console -n "ProjectName" -o "OutputFolderName" --language "C#" --framework "net6.0" --langVersion "10.0"
+	dotnet new xunit -n "ProjectNameTests" --language "C#" --framework "net6.0"
+	dotnet sln add ./ProjectFolder/ProjectName.csproj ./ProjectFolderTests/ProjectNameTests.csproj
+	dotnet add ProjectFolderTests/ProjectNameTests.csproj reference ProjectFolder/ProjectName.csproj
+	dotnet add package Microsoft.Extensions.DependencyInjection
+	dotnet add package Microsoft.Extensions.Logging
+	dotnet build
+	dotnet run
+
+	// dotnet sln Collections.sln add (ls -r **/*.csproj)  // "on win only in powershell"
+	// add references with extension ".NET Core Add Reference" // dotnet add reference **/*.csproj
+	// add nuget packages with extension's "NuGet Gallery" and "NuGet Package Manager"
+	// create new classes with extension "C# Extensions"
+	// add xml documentation with extension "C# XML Documentation Comments"
