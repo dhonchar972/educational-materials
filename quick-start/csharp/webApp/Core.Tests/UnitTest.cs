@@ -1,6 +1,6 @@
 namespace Core.Tests;
 
-public class Tests
+public class UnitTest
 {
     [SetUp]
     public void Setup()
@@ -8,7 +8,7 @@ public class Tests
     }
 
     [Test]
-    public void Test1()
+    public void Test()
     {
         Assert.Pass();
     }

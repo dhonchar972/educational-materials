@@ -1,9 +1,10 @@
+using Core.Dto;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("weather")] //[Route("[controller]")]
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
@@ -18,10 +19,10 @@ public class WeatherForecastController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<WeatherForecast> Get()
+    [HttpGet] // https://localhost:7189/weather
+    public IEnumerable<WeatherForecastDto> Get()
     {
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        return Enumerable.Range(1, 5).Select(index => new WeatherForecastDto
         {
             Date = DateTime.Now.AddDays(index),
             TemperatureC = Random.Shared.Next(-20, 55),
