@@ -12,4 +12,8 @@ public class Collections : DbContext
 
     public DbSet<WeatherForecast> WeatherForecasts { get; set; }
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.AddWeatherConstraints();
+    }
 }
