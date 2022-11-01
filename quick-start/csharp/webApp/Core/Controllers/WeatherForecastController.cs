@@ -1,5 +1,4 @@
 using Core.Dto;
-
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core.Controllers;

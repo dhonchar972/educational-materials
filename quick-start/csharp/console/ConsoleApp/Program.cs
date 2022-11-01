@@ -59,7 +59,6 @@ namespace ConsoleApp
             Logger = new Serilog.LoggerConfiguration()
                             .ReadFrom.Configuration(builder.Build())
                             .Enrich.FromLogContext()
-                            .WriteTo.Console()
                             .CreateLogger();
 
             Logger.Information("Application Starting");

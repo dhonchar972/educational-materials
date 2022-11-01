@@ -1,7 +1,6 @@
 using Core.Data;
-using Core.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic;
+using Serilog;
 
 namespace Core.Config;
 
@@ -19,6 +18,14 @@ public static class ServiceConfig
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+
+        //var configuration = new ConfigurationBuilder().AddJsonFile("application.json").Build();
+        var logger = new LoggerConfiguration()
+            .ReadFrom.Configuration(builder.Configuration)
+            .Enrich.FromLogContext()
+            .CreateLogger();
+
+        builder.Host.UseSerilog(logger);
 
         builder.Services.AddDbContext<Collections>(options =>
         {
