@@ -13,6 +13,7 @@
       <Authors>Dmytro Honchar</Authors>
       <Company>MyCompany</Company>
       <Description>Simpple WebApp</Description>
+      <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>

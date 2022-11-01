@@ -1,24 +1,25 @@
 ﻿using Microsoft.Extensions.Logging;
 
+using static Serilog.ConsoleLoggerConfigurationExtensions;
+
 namespace ConsoleApp
 {
     class Program
     {
         public static void Main(string[] args)
         {
-            using var loggerFactory = LoggerFactory.Create(builder =>
-            {
-                builder
-                    .AddFilter("Microsoft", LogLevel.Warning)
-                    .AddFilter("System", LogLevel.Warning)
-                    .AddFilter("LoggingConsoleApp.Program", LogLevel.Debug)
-                    .AddConsole();
-            });
-            ILogger logger = loggerFactory.CreateLogger<Program>();
-            logger.LogInformation("Example log message");
+             ILogger logger = LoggerFactory
+                 .Create(builder => builder.SetMinimumLevel(LogLevel.Debug).AddConsole())
+                 .CreateLogger<Program>();
 
-            ILogger myLogger = LoggerFactory.Create(builder => builder.AddConsole()).CreateLogger<Program>();
-            myLogger.LogInformation("Example log message2");
+            logger.LogInformation("Message from default logger");
+
+            Serilog.Log.Logger = new Serilog.LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .WriteTo.Console()
+                .CreateLogger();
+
+            Serilog.Log.Logger.Information("Message from serilog");
         }
     }
 }

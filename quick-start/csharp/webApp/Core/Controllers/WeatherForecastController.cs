@@ -1,4 +1,5 @@
 using Core.Dto;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core.Controllers;
@@ -19,9 +20,11 @@ public class WeatherForecastController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet] // https://localhost:7189/weather
+    [HttpGet] // https://localhost:8080/weather
     public IEnumerable<WeatherForecastDto> Get()
     {
+        _logger.LogInformation("Call get method");
+
         return Enumerable.Range(1, 5).Select(index => new WeatherForecastDto
         {
             Date = DateTime.Now.AddDays(index),
