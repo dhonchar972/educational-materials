@@ -1,7 +1,7 @@
 package ua.honchar.concurrency;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Dmytro Honchar <dmytro.honchar972@gmail.com>
@@ -9,5 +9,6 @@ import org.apache.logging.log4j.Logger;
  */
 public class UtilImpl implements Util{
 
-    private static final Logger log = LogManager.getLogger(UtilImpl.class);
+    private static final Logger log = LoggerFactory.getLogger(UtilImpl.class);
+
 }

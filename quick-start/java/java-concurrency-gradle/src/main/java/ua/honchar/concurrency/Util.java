@@ -5,5 +5,4 @@ package ua.honchar.concurrency;
  * Date: 10/28/2022
  */
 public interface Util {
-
 }

@@ -1,6 +1,6 @@
 package ua.honchar.concurrency;
 
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Dmytro Honchar <dmytro.honchar972@gmail.com>
@@ -9,8 +9,10 @@ import org.apache.logging.log4j.LogManager;
 public class Main {
 
     public static void main(String[] args) {
-        final var log = LogManager.getLogger(Main.class);
-        log.info("I WORK!!!");
+
+        final var logger = LoggerFactory.getLogger(Main.class);
+        logger.info("I WORK!!!");
         //System.out.println("I WORK!!!");
+
     }
 }

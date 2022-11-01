@@ -5,6 +5,8 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 /**
  * @author Dmytro Honchar <dmytro.honchar972@gmail.com>
  * Date: 10/28/2022
@@ -16,7 +18,8 @@ class ConcurrencyApplicationTests {
 
 	@Test
 	void contextLoads() {
-
+		assertTrue(true);
+		logger.info("All good!");
 	}
 
 }

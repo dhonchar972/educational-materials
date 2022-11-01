@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Date: 10/28/2022
  */
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping("/api")
 public class BaseController {
 
     private static final Logger logger = LogManager.getLogger(BaseController.class);
