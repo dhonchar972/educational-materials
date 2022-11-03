@@ -1,4 +1,4 @@
-namespace Core.Dto;
+namespace Core.DTOs;
 
 public class WeatherForecastDto
 {

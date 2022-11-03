@@ -17,7 +17,8 @@ public static class MiddlewareConfig
     //     app.MapControllers();
     // }
 
-    public static void ConfigureMiddleware(this WebApplication app)  // Add middleware to the container
+    // Configure the HTTP request pipeline.
+    public static void ConfigureMiddleware(this WebApplication app)  // Add middleware to the container(middleware pipeline)
     {
         if (app.Environment.IsDevelopment())
         {

@@ -1,6 +1,6 @@
 namespace Core.Repositories;
 
-public class IWeatherRepository
+public interface IWeatherRepository
 {
-
+    void DoSomeWork(string taskName);
 }
