@@ -1,4 +1,4 @@
-package com.honchar.concurrency;
+package com.honchar.boot;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
