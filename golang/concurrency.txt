@@ -1,0 +1,55 @@
+go funcName(...param)
+
+func say(s string) {
+	for i := 0; i < 5; i++ {
+		time.Sleep(100 * time.Millisecond)
+		fmt.Println(s)
+	}
+}
+
+func main() {
+	go say("world")
+	say("hello")
+}
+
+ci := make(chan int)    // unbuffered channel of integers
+cj := make(chan int, 0) // unbuffered channel of integers
+ck := make(chan int, 1) // buffered channel of integers
+ch <- v
+v := <-ch
+
+/////////////////////////////////////////////////////////////////Select///////////////////////////////////////////////////////
+
+for {
+	select {
+	case c <- x:
+		x, y = y, x+y
+	case <-quit:
+		fmt.Println("quit")
+		return
+	}
+}
+
+R1:= make(chan string)
+R2:= make(chan string)
+go portal1(R1)
+go portal2(R2)
+
+select {
+case op1:= <- R1: // info from channel 1
+	fmt.Println(op1)
+case op2:= <- R2:
+	fmt.Println(op2) // info from channel 1
+}
+
+/////////////////////////////////////////////////////////Mutex////////////////////////////////////////////////////////////////
+type SafeCounter struct {
+	mu sync.Mutex  // mutex
+	v  map[string]int
+}
+func (c *SafeCounter) Inc(key string) {
+	c.mu.Lock()
+	c.v[key]++
+	c.mu.Unlock()
+}
+

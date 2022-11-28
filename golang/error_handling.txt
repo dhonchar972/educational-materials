@@ -1,0 +1,42 @@
+func Open(name string) (file *File, err error)
+
+f, err := os.Open("filename.ext")
+if err != nil {
+    log.Fatal(err)
+}
+
+/////////////////////////////////////////////////////////Default Error////////////////////////////////////////////////////////
+
+type error interface {
+    Error() string
+}
+type errorString struct {
+    s string
+}
+func (e *errorString) Error() string {
+    return e.s
+}
+func New(text string) error {
+    return &errorString{text}
+}
+
+//////////////////////////////////////////////////////////Recover/////////////////////////////////////////////////////////////
+
+defer Function()
+defer func() {
+	err = cleanup()
+}()
+
+panic()
+recover()
+
+func f() {
+    defer func() {
+        if r := recover(); r != nil {
+            fmt.Println("Recovered in f", r)
+        }
+    }()
+    fmt.Println("Calling g.")
+    g(0)
+    fmt.Println("Returned normally from g.")
+}

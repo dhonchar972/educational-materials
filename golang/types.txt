@@ -1,0 +1,60 @@
+Reference types: slice, map, channel, interface, and function types
+
+bool
+byte // alias for uint8
+int
+rune // alias for int32, represents Unicode
+float
+string
+func - reference type
+struct - value type Name struct{...}
+interface - reference type, type Name interface{...} or interface{}
+array - value type, problems with transfer to a function, better use slice, [10]int{}
+slice - reference type, []int{} or make([]type, length, capacity), slice = append(slice, value1, value2)
+map - reference type, map[string]int{} or make(map[string]int), m["key"]=value
+chan - reference type, make(chan int)
+////////////////////////////////////////////////////////Slice of structs/////////////////////////////////////////////////////
+s := []struct {
+		i int
+		b bool
+	}{
+		{2, true},
+		{3, false},
+		{5, true},
+		{7, true},
+		{11, false},
+		{13, true},
+	}
+/////////////////////////////////////////////////////////Slice of slices/////////////////////////////////////////////////////
+board := [][]string{
+	[]string{"_", "_", "_"},
+	[]string{"_", "_", "_"},
+	[]string{"_", "_", "_"},
+}
+board[0][0] = "X"
+board[2][2] = "O"
+board[1][2] = "X"
+board[1][0] = "O"
+board[0][2] = "X"
+for i := 0; i < len(board); i++ {
+	fmt.Printf("%s\n", strings.Join(board[i], " "))
+}
+
+for key, value := range pow {
+	fmt.Printf("2**%d = %d\n", key, value)
+}
+/////////////////////////////////////////////////////// function as parameter////////////////////////////////////////////////
+func aboba(s []int, fn func(*int)(bool)){
+	for i := range s {
+		fn(&s[i])
+	}
+}
+func main() {
+	sl := []int{12, 7, 6}
+	aboba(sl, func(i *int)(bool){ 
+		*i++
+		return true
+	})
+	fmt.Println(sl)
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
