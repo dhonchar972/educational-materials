@@ -24,7 +24,9 @@ def tuple_test():
     print(a)
 
     b = tuple(("one", "two", "three"))  # don't forget about double brackets
+    b = (*b, "five")  # add element to tuple
     print(b)
+    print(type(b))
 
 
 def set_test():
@@ -32,16 +34,19 @@ def set_test():
     b = set(("one", "two", "three"))  # don't forget about double brackets
     print(a)
     print(b)
+    b.add("five")
+    b.remove("one")
 
 
 def dict_test():
     a = {"one": 1, "two": 2}
     b = dict(one=1, two=2)
     print(f"{a}\n{b}", end='')
-
+    b["three"] = 3
+    b.get("two")
+    del b["one"]
+    b.pop("two")
+    print(b)
 
 if __name__ == '__main__':
-    val = MyClass("aboba", "abeba")
-
-    z = initer(val)
-    print(z)
+    dict_test()

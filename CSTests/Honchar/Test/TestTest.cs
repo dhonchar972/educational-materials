@@ -1,4 +1,5 @@
-﻿using CSTests.Honchar.Test.Second;
+﻿using CSTests.Honchar.Test.First;
+using CSTests.Honchar.Test.Second;
 
 namespace CSTests.Honchar.Test
 {
@@ -10,7 +11,9 @@ namespace CSTests.Honchar.Test
         public string InitProp { get; init; }
         public required string ReqProp { get; init; }
 
-        private TestTest() { }
+        private TestTest() { 
+            TestFirst.DoSomethingFirst();
+        }
 
         public TestTest(int i) { }
 

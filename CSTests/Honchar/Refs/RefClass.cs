@@ -29,5 +29,18 @@
         {
             str = "Updated string";
         }
+
+        internal static void Increase(ref IList<int> list)
+        {
+            for (var i = 0; i < list.Count; i++) 
+            {
+                list[i]++;
+            }
+        }
+
+        internal static void IncreaseTwo(ref List<int> list)
+        {
+            list.AsParallel().Select(v => ++v).ToList();
+        }
     }
 }
