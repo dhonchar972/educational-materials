@@ -1,0 +1,2 @@
+LINQ collection is immutable(simmilar to foreach), we can only filter, sort, join paar of collections, compare, and other, 
+no modification, from this data we create new collection.
