@@ -1,0 +1,2 @@
+build-c> gcc ..\compl.c ..\compl.h ..\main.c -o compl.exe
+build-c> .\compl.exe Simon Perry

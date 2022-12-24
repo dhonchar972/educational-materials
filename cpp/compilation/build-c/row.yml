@@ -1,0 +1,7 @@
+row> gcc -E ..\..\main.c > main.c
+
+row> gcc -S ..\..\main.c -o main.s
+
+as -o main.o main.s
+
+ld 
