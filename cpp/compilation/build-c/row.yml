@@ -1,7 +1,12 @@
-row> gcc -E ..\..\main.c > main.c
+row> gcc -g -E ..\..\main.c > main.c
 
-row> gcc -S ..\..\main.c -o main.s
+row> gcc -g -S ..\..\main.c -o main.s
 
-as -o main.o main.s
+as -o main.o main.s // OR // gcc -g ..\..\main.c -c -o main.o 
 
-ld 
+ld -e main -l "D:\VS2022\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\bin\Hostx64\x64\msvcp140.dll" -o proj.exe .\compiled-to-binary\compl.o .\compiled-to-binary\main.o
+
+msvcp140.dll // libstdc++-6.dll
+
+.\proj.exe Simon 
+

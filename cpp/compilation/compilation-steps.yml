@@ -27,7 +27,7 @@ Phases of translation:
 	Linking:
 		9. Сборка образа:
 			Translation Unit's, Instantiation Unit's и библиотеки(статические .lib - "library", .a - "archive" | динамические .dll - "dynamic link library", .so - "shared object"), 
-			необходимые для разрешения внешних зависимостей, собираются в образ программы, который содержит информацию, необходимую для исполнения(.exe, "")
+			необходимые для разрешения внешних зависимостей, собираются в образ программы, который содержит информацию, необходимую для исполнения(.exe, .out)
 
 
 https://en.cppreference.com/w/cpp/language/translation_phases
