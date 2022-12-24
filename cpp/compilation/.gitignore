@@ -1,0 +1,11 @@
+patterns.iml
+.idea/
+target
+build/
+.gradle/
+.vscode/
+.vs/
+bin/
+obj/
+**.DotSettings.user
+**.csproj.user

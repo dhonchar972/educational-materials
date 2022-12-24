@@ -1,0 +1,7 @@
+[
+{
+  "directory": "D:/programming/educational-materials/cpp/test/build",
+  "command": "D:\\msys64\\mingw64\\bin\\clang.exe -ID:/programming/educational-materials/cpp/test/test -ID:/programming/educational-materials/cpp/test/PUBLIC -ID:/programming/educational-materials/cpp/test/include -g -o CMakeFiles\\test.dir\\main.c.obj -c D:\\programming\\educational-materials\\cpp\\test\\main.c",
+  "file": "D:\\programming\\educational-materials\\cpp\\test\\main.c"
+}
+]

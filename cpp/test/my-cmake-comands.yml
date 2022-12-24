@@ -1,0 +1,16 @@
+wsl --install -d Ubuntu-18.04
+
+wsl --shutdown
+mkdir d:\backup
+wsl --export Ubuntu-18.04 d:\backup\ubuntu.tar
+wsl --unregister Ubuntu-18.04
+mkdir D:\WSL
+wsl --import Ubuntu-18.04 D:\WSL\ D:\backup\ubuntu.tar
+C:\Users\${USERPROFILE}\AppData\Local\Microsoft\WindowsApps\ubuntu1804.exe config --default-user dhonchar972 ///or/// $env:USERPROFILE\AppData\Local\Microsoft\WindowsApps\ubuntu1804.exe config --default-user dhonchar972
+wsl -d Ubuntu-18.04
+
+
+
+cmake .. -G "Ninja Multi-Config" -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_BUILD_TYPE=Debug
+cmake --build .
+./Debug/test
