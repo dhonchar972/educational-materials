@@ -1,0 +1,39 @@
++
+-
+++
+--
+*
+/
+%
+Math.Sqrt();
+
+~ NOT
+& AND
+| OR
+^ XOR
+<<
+>>
+
+!
+!=
+==
+&&
+||
+<
+>
+<=
+>=
+
+s != null; - null guard
+s == null ? 0 : s.Length; - ternary conditional operator
+s ?? ""; - null-coalescing operator without evaluation
+s ??= foo(); - null-coalescing operator with evaluation
+s?.Length(); - null-conditional operator, s?[0];
+s?; - nullable(optional) - sugar for Nullable<T>
+s!; - null-forgiving operator
+if(s is null)
+if(s is not null)
+:: - namespace alias operator
+with
+_ - ignore value
+when - case (int w, int h) when w > h: // (int w, int h) when w > h => "Some"

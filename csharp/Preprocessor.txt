@@ -1,0 +1,11 @@
+#if
+#elif
+#else
+#endif
+#define
+#error
+#warning
+#line
+#pragma - "#pragma warning disable CS0168" or "#pragma warning disable nullable"
+#nullable
+#region / #endregion

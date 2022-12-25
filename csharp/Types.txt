@@ -1,0 +1,43 @@
+byte - System.Byte - 8bit(1byte) - unsigned(0 to 255)
+sbyte - System.SByte - 8bit(1byte) - signed(-128 to 127)
+ushort - System.UInt16 - 16bit(2byte) - unsigned(0 to 65_535)
+short - System.Int16 - 16bit(2byte) - signed(-32_768 to 32_757)
+uint - System.UInt32 - 32bit(4byte) - unsigned(0 to 4_294_967_295)
+int - System.Int32 - 32bit(4byte) - signed(-2_147_483_648 to 2_147_483_647)
+ulong - System.UInt64 - 64bit(8byte) - unsigned(0 to 18_446_744_073_709_551_615)
+long - System.Int64 - 64bit(8byte) - signed(-9_223_372_036_854_775_808 to 9_223_372_036_854_775_807)
+BigInteger - System.Numerics.BigInteger - dynamic structure, depends only on device memory
+
+
+float - System.Single - 32bit(4byte) - ~7 decimal digits
+double - System.Double - 64bit(8byte) - ~15 decimal digits
+decimal - System.Decimal - 128bit(16byte)
+
+Decimal overflow control:
+	"checked" - throw System.OverflowException
+		int result = checked(a + b) + c;
+
+		checked
+		{
+			int r1 = a + b;
+			int r2 = r1 - (int)c;
+		}
+
+	"unchecked"
+
+
+bool - System.Boolean - true, false != 1, 0
+
+
+char - System.Char - 16bit(2byte) - UTF-16
+string - System.String - string literal stored in string pool - var text = new string(char[] chars = { 'c', 'b', (char)0x301 });
+StringBuilder - System.Text.StringBuilder - dynamic class
+
+String formatting(printf):
+	string str = $"{myInt:D5}"; // syntactic sugar for string.Format("{0:D5}", myInt)
+	string str2 = @"C:\Windows\System32"; // disable symbol interpolation("\\")
+
+
+Tuple - System.Tuple - (int x, int y) p = (5, 10); - var p = (x: 5, y: 10);
+
+object - System.Object - Equals(Object), Equals(Object, Object), Finalize(), GetHashCode(), GetType(), MemberwiseClone(), ReferenceEquals(Object, Object), ToString()

@@ -1,0 +1,51 @@
+[assembly: InternalsVisibleTo("ClassName")] - allow a specific class to be inherited
+class MyClass {}
+
+Protection levels:
+	Top-level types(Classes, Structs, Interfaces) protection level: internal, public
+	Inner classes, structs and constructors - private, internal, protected, public
+	Enum protection level: none, always public
+	Everything else: public, protected, internal, private, protected internal, private protected
+
+Modifiers: static, readonly, const, 
+
+Passing a variable by reference:
+	ref
+	out
+	in
+
+int Foo(in double x, out int y) {}
+int Foo2(int doublex, params object[] args) {} // variable number of additional parameters
+
+Overriding operators:
+	public static bool operator ==(Point p1, Point p2) {}
+	public static bool operator !=(Point p1, Point p2) {}
+	public override bool Equals(object obj) {}
+	public override int GetHashCode() {}
+
+Constructors:
+	public MyConstructor(string name, int age) : base() { _name = name; _age = age; }
+	public MyConstructor(string name) : this(name, 0) {}
+
+Named parameters: using var w = new StreamWriter(filepath, append: true, Encoding.UTF8);
+
+Extensions methods: public static void Show(this string s) {}
+
+Properties: 
+	public int X { get; private set; }
+	public int X { get; init; }
+
+Indexes: public string this[int index] { get => index < 5 ? "Foo" : "Bar"; }
+
+Implicit and explicit conversion(явное и неявное приведение типов):
+	public static explicit operator int(Counter value) {}
+
+[System.Flags]
+public enum Ingredients : long
+{
+	Eggs = 1 << 0,
+	Bacon = 1 << 1,
+	Tomato = 1 << 2,
+}
+
+Anonymous types: var x = new { Title = "Lord" };
