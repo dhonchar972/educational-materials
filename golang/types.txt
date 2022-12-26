@@ -2,7 +2,7 @@ Reference types: slice, map, channel, interface, and function types
 
 bool
 byte // alias for uint8
-int
+int // int32/int64
 rune // alias for int32, represents Unicode
 float
 string

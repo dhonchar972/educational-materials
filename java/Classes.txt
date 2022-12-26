@@ -1,0 +1,44 @@
+Modifiers: static, final, abstract, native, strictfp, transient, synchronized, volatile
+
+Access levels: default, public, protected, private
+
+package my.package;
+
+class MyClass 
+	extends AnotherClass 
+	implements Interface1, Interface2 
+	throws java.io.IOException {
+
+	private String name;
+	private int age;
+
+	{
+		// static initializer
+	}
+
+	MyClass (String name, int age) {
+		this(name);
+		this.age = age;
+	}
+
+	MyClass (String name) {
+		suprer();
+		this.name = name;
+	}
+	
+	@Override
+   	public int voice() {
+       		System.out.println("HI!");
+       		return 1;
+   	}
+}
+
+Object methods:
+	Object clone()
+	boolean equals(Object o)
+	int hashCode()
+	void finalize()
+	void notifyAll()
+	String toString()
+	Class<?> getClass()
+	void wait() + 2 overloads

@@ -1,0 +1,25 @@
+@interface MyInterface {
+	String str();
+	int val();
+}
+
+@MyAnno(str = "Some str", val = 100)
+public static void myMeth() {}
+
+Targets: SOURCE, CLASS, RUNTIME
+
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Nickname {}
+
+@Retention
+@Documented
+@Target
+@Inherited
+@Override
+@Deprecated
+@SafeVarargs
+@FunctionalInterface
+@SuppressWarnings 
+@Repeatable
+@Native

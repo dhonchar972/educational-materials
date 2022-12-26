@@ -1,0 +1,18 @@
+Runnable
+Thread
+synchronized
+volatile
+
+CompletableFuture<String> cf = new CompletableFuture<>();
+
+public static void play() {
+    while (true) {
+        IntStream.range(0, 10).boxed().forEach(i -> CompletableFuture.supplyAsync(producer).thenAcceptAsync(consumer));
+        
+        try {
+            Thread.sleep(500 + r.nextInt(500));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}

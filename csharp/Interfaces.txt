@@ -1,7 +1,25 @@
-TODO: Интерфеси с реализацией по умолчанию
+interface IMessage
+{
+    string Text { get; set; }
+}
+interface IPrintable
+{
+    void Print();
+}
+interface IMovable
+{
+    void Move() => Console.WriteLine("Walking");  // Default implementation
+}
 
-TODO: Популярние интерфейси
-IEnumerable<T>
-IEnumerator<T>
-IComparable<T>
-IComparer<T>
+class Person : ISchool, IUniversity  // Explicit implementation
+{
+    void ISchool.Study() => Console.WriteLine("School");
+    void IUniversity.Study() => Console.WriteLine("University");
+}
+
+IEnumerable<T>, IEnumerator<T>
+IQueryable
+IComparable<T>, IComparer<T>
+IEquatable<T>, IEqualityComparer<T>
+IDisposable
+IFormattable

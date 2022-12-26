@@ -26,7 +26,7 @@ Decimal overflow control:
 	"unchecked"
 
 
-bool - System.Boolean - true, false != 1, 0
+bool - System.Boolean - true, false != 1, 0 - 1bit
 
 
 char - System.Char - 16bit(2byte) - UTF-16
@@ -41,3 +41,12 @@ String formatting(printf):
 Tuple - System.Tuple - (int x, int y) p = (5, 10); - var p = (x: 5, y: 10);
 
 object - System.Object - Equals(Object), Equals(Object, Object), Finalize(), GetHashCode(), GetType(), MemberwiseClone(), ReferenceEquals(Object, Object), ToString()
+
+public ref struct Name {}:
+Span<T>: type-safe and memory-safe representation of a contiguous region of arbitrary memory.
+ReadOnlySpan<T>:
+Memory<T>:
+ReadOnlyMemory<T>:
+ReadOnlySequence<T>:
+
+

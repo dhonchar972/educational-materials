@@ -1,5 +1,13 @@
-TODO: generations
+3 generations: 0, 1, 2
 
 WeakReference<TValue>()
 
 System.GC GC.Collect(2); // collect second generation
+
+Stack: 1 MB, Stack pointer, Local(ThreadLocal)
+
+Heap:
+	SOH: Small object heap, 0-85kB(Kilpbyte), 
+	LOH: Large object heap, 86kB-Inf
+	POH: Pinned object heap, appeared in .NET 5, 
+

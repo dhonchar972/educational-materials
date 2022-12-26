@@ -1,0 +1,39 @@
+StreamReader
+StreamWriter
+TextReader
+TextWriter
+StringReader
+StringWriter
+FileStream
+BinaryReader
+BinaryWriter
+BinaryPrimitives
+
+static void Log(string message)
+{
+	using(var sw = new StreamWriter(@"c:\temp\log.txt", true))
+	{
+		sw.WriteLine(message);
+	}
+}
+static void Log(string message)
+{
+	File.AppendAllText(@"c:\temp\log.txt", message);
+}
+static void Log(string message)
+{
+	File.AppendAllLines(@"c:\temp\log.txt", new[] { message });
+}
+
+foreach(string file in Directory.GetFiles(@"c:\users\name\Pic", "*.jpg", SearchOption.AllDirectories))
+{
+	System.Console.WriteLine(file):
+}
+
+Path
+FileInfo
+DirectoryInfo
+FileSystemInfo
+
+[Serializable]
+JSON.NET

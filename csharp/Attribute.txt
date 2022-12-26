@@ -1,0 +1,31 @@
+Assembly level attribute:
+	[assembly: System.Diagnostics.CodeAnalysis.SuppressMesage(
+		"StyleCop.CSharp.NamingRules",
+		"SA1313:Parameter names should begin with lower-case letter",
+		Justification = "Triple underscore acceptable for unused lambda parameter",
+		Scope = "member",
+		Target = "~M:Idg.Examples.SomeMethod")]
+
+Module level attribute:
+	[module: Debuggable(DebuggableAttribute.DebuggingModes.DisableOptimizations)]
+
+Field level attribute:
+	[field: NonSerialized]
+
+Custome attribute:
+	[AttributeUsage(AttributeTargets.Class)]
+	public class PluginInformationAttribute : Attribute
+	{
+		public PluginInformationAttribute(string name, string author)
+		{
+			Name = name;
+			Author = author;
+		}
+		
+		public string Name { get; }
+		public string Author { get; }
+		public string Description { get; set; }
+	}
+
+	[PluginInformation("Report", "Endjin")]
+	public class ReportingPlugin {}

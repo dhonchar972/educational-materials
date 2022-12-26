@@ -11,3 +11,17 @@ foreach(var c in commaCultures)
 }
 
 commaCultures.ToList().ForEach(Console.WriteLine);
+
+
+var comCul = from c in CultureInfo.GetCultures(CultureTypes.AllCultures)
+	     let numFormat = c.NumberFormat
+	     where numFormat.NumberDecimalSeparator == ","
+	     select c.Name;
+
+var comCul = CultureInfo.GetCultures(CultureTypes.AllCultures)
+	         .Select(c => new { c, numFormat = c.NumberFormat })
+		 .Where(v => v.numFormat.NumberDecimalSeparator == ",")
+		 .Select(v => v.c.Name);
+
+.AsParallel()
+.Paralell()

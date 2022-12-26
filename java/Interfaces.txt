@@ -1,0 +1,26 @@
+interface MyInterface {
+	// constants
+	int MIN = 0;
+	int MAX = 10;
+
+	void meth();
+	void meth(int);
+
+	static int getNumber() {
+		return 1;
+	}
+
+
+	default void meth(double d) {  // method with implementation
+		System.out.println(d);
+	}
+
+	private int foo() {
+		return 1;
+	}
+}
+
+@FunctionalInterface
+public interface TriFunction<T, U, V, R> {
+    R apply(T t, U u, V v);
+}

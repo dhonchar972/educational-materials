@@ -1,0 +1,73 @@
+NIO
+
+%c	character
+%d	decimal (integer) number (base 10)
+%e	exponential floating-point number
+%f	floating-point number
+%i	integer (base 10)
+%o	octal number (base 8)
+%s	a string of characters
+%u	unsigned decimal (integer) number
+%x	number in hexadecimal (base 16)
+%%	print a percent sign
+\%	print a percent sign
+
+\a	audible alert
+\b	backspace
+\f	form feed
+\n	newline, or linefeed
+\r	carriage return
+\t	tab
+\v	vertical tab
+\\	backslash
+
+String result = String.format("%4d", i * j);
+String formatted = "%s: %s".format(key, value);
+String str = "I Like Wine".Replace("Wine","Beer");
+
+char ch = (char) System.in.read();
+System.out.printf("Bгtton: %c.\n", ch);
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+var str = br.readLine();
+
+Byte streams:
+	BufferedInputStream
+	BufferedOutputStream
+	ByteArrayInputStream
+	ByteArrayOutputStream
+	DataInputStream
+	DataOutputStream
+	FileInputStream
+	FileOutputStream
+	FilterInputStream
+	FilterOutputStream
+	InputStream
+	ObjectInputStream
+	ObjectOutputStream
+	OutputStream
+	PipedInputStream
+	PipedOutputStream
+	PrintStream
+	PushbackInputStream
+	SequenceInputStream
+
+Сharacter streams:
+	BufferedReader
+	BufferedWriter
+	CharArrayReader
+	CharArrayWriter
+	FileReader
+	FileWriter
+	FilterReader
+	FilterWriter
+	InputStreamReader
+	LineNumberReader
+	OutputStreamWriter
+	PipedReader
+	PipedWriter
+	PrintWriter
+	PushbackReader
+	Reader
+	StringReader
+	StringWriter
+	Writer

@@ -1,0 +1,11 @@
+Generetains:
+	Young:
+		EdenSpace - start position
+		SurvivorSpace - FromSpace, ToSpace
+	Old:
+	MetaSpace:
+
+
+After small garbage collection event all death objects from Eden and FromSpace removes, survivers move to ToSpace.
+After next small event all death objects from Eden and ToSpace removes, survivers move to FromSpace.
+Repeat!

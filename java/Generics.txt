@@ -1,0 +1,22 @@
+class Gen<T extends Number> {
+	T obj;
+
+	Gen(T obj) {
+		this.obj = obj;
+	}
+
+	T getObj() {
+		return obj
+	}
+}
+
+static void test (Gen<? extends А> о) {}  // <?> - wildcard
+
+// generic method
+static <T extends Comparable<T>, V extends T> boolean arraysEqual(T[] x, V[] y) {}
+
+<T extends Number> Gen(T arg) {}  // generic constructor
+
+interface Containment<T> {
+	boolean contains(T o);
+}

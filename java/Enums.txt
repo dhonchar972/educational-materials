@@ -1,0 +1,26 @@
+enum Name {  // each element of the enum is a separate class!!!
+	CAR, TRUCK, TRAIN
+}
+
+enum Name {
+	CAR(1 << 0), 
+	TRUCK(1 << 1), 
+	TRAIN(1 << 2)
+}
+
+public enum StatusFlag {
+    DOCUMENT_STATUS_NOT_DEFINED,
+    DOCUMENT_STATUS_OK, 
+    DOCUMENT_STATUS_MISSING_TID_DIR,
+    DOCUMENT_STATUS_MISSING_TIF_FILE,
+    DOCUMENT_STATUS_MISSING_PDF_FILE,
+    DOCUMENT_STATUS_MISSING_OCR_FILE,
+    DOCUMENT_STATUS_PAGE_COUNT_TIF,
+    DOCUMENT_STATUS_PAGE_COUNT_PDF,
+    DOCUMENT_STATUS_UNAVAILABLE;
+
+
+    public long getStatusFlagValue(){
+        return 1 << this.ordinal();
+    } 
+}

@@ -1,0 +1,36 @@
+Rx:
+	  System.Reactive
+	  System.Reactive.Concurrency
+	  System.Reactive.Disposable
+	  System.Reactive.Joins
+	  System.Reactive.Linq
+	  System.Reactive.Subjects
+	  System.Reactive.Threading
+	  ReactiveTests
+
+Thread
+lock(_sync)
+Monitor  // Monitor.Enter(_sync, ref lockWasTaken), Monitor.Wait(_sync), Monitor.Pulse(_sync) Monitor.Exit(_lock)
+SpinLock
+Lazy<T>
+LazyInitializer
+Task
+Task<T>
+ValueTask
+ValueTask<T>
+async / await
+
+static async Task CatchAll(Task[] ts)
+{
+	try
+	{
+		var t = Task.WhenAll(ts);
+		await t.ContinueWith(x => {}, TaskContinuationOptions.ExecuteSynchronously);
+		t.Wait();
+	}
+	catch(AggregateException all)
+	{
+		Console.WriteLine(all);
+	}
+}
+

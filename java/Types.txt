@@ -1,0 +1,17 @@
+bool - true, false != 1, 0 - 1bit
+
+byte - 8bit(1byte) - signed(-128 to 127)
+short - 16bit(2byte) - signed(-32_768 to 32_757)
+int - 32bit(4byte) - signed(-2_147_483_648 to 2_147_483_647)
+long - 64bit(8byte) - signed(-9_223_372_036_854_775_808 to 9_223_372_036_854_775_807)
+BigInteger - dynamic class, depends only on device memory
+
+float - 32bit(4byte)
+double - 64bit(8byte)
+
+char - 16bit(2byte) - UTF-16
+string - string literal stored in string pool
+StringBuilder
+StringBuffer
+
+object
