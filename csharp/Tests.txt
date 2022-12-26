@@ -1,0 +1,19 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+
+namespace MyProject.Tests;
+
+public class TestBase<TSubject, TFake> 
+	where TSubject : new() // null constructor
+	where TFake : class // class type
+{
+	public TSubject Subject { get; private set; }
+	public Mock<Tfake> Fake { get; private set; }
+
+	[TestInitialize]
+	public void Initialize()
+	{
+		Subject = new TSubject();
+		Fake = new Mock<TFake>();
+	}
+}

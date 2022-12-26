@@ -1,0 +1,13 @@
+IEnumerable<CultureInfo> commaCultures = from culture in CultureInfo.GetCultures(CultureTypes.AllCultures)
+                                         where culture.NumberFormat.NumberDecimalSeparator == ","
+                                         select culture;
+
+var commaCultures = CultureInfo.GetCultures(CultureTypes.AllCultures)
+                        .Where(c => c.NumberFormat.NumberDecimalSeparator == ",");
+
+foreach(var c in commaCultures)
+{
+	System.Console.WriteLine(c.Name);
+}
+
+commaCultures.ToList().ForEach(Console.WriteLine);

@@ -1,0 +1,31 @@
+TODO: вложенние try/catch блоки, как работают, типи исключений
+
+Parse(), TryParse()
+
+try
+{
+	using (StreamReader r = new StreamReader(@"C:\Temp\File.txt"))
+	{
+		while(!r.EndOfStream)
+		{
+			Console.WriteLine(r.ReadLine());
+		}
+	}
+}
+catch(FileNotFoundException e)
+{
+	Console.WriteLine($"Error, file '{e.FileName}' is missing");
+}
+catch(IOException x)
+{
+	LogIOError(x);
+	throw; // don't do "throw x;", just "throw;"!!!!!
+}
+finally
+{
+	...;
+}
+
+Environment.FailFast(); //drop system!
+
+Exception -> ApplicationException, SystemException, 

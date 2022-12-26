@@ -1,0 +1,42 @@
+Default:
+	public delegate void Action(); 0-16 inputs, 0 outputs
+	public delegate bool Predicate<in T>(T obj); 1 input, 1 bool output
+	public delegate TResult Func<out TResult>(); 0-16 inputs, 1 output
+
+
+MulticastDelegate:
+	Predicate<int> megaPredicate = greaterThanZero + greaterThanTen + greaterThanOneHundred;
+	Predicate<int> megaPredicate = greaterThanZero;
+	megaPredicate += greaterThanTen;
+	megaPredicate += greaterThanOneHundred;
+	megaPredicate -= greaterThanZero;
+
+
+class Account
+{
+    public delegate void AccountHandler(string message);  // delegate
+    public event AccountHandler? Notify;  // action
+
+    public Account(int sum) => Sum = sum;  // constructor
+
+    public int Sum { get; private set; }  // property
+
+    public void Put(int sum)
+    {
+        Sum += sum;
+        Notify?.Invoke($"Received on account: {sum}");  // action call
+    }
+
+    public void Take(int sum)
+    {
+        if (Sum >= sum)
+        {
+            Sum -= sum;
+            Notify?.Invoke($"Withdrawn from account: {sum}");  // action call
+        }
+        else
+        {
+            Notify?.Invoke($"Not enough money in the account. Current balance: {Sum}");  // action call
+        }
+    }
+}

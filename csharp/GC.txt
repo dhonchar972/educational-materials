@@ -1,0 +1,5 @@
+TODO: generations
+
+WeakReference<TValue>()
+
+System.GC GC.Collect(2); // collect second generation

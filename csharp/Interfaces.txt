@@ -1,3 +1,7 @@
 TODO: Интерфеси с реализацией по умолчанию
 
 TODO: Популярние интерфейси
+IEnumerable<T>
+IEnumerator<T>
+IComparable<T>
+IComparer<T>

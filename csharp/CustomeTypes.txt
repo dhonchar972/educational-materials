@@ -1,5 +1,5 @@
 [assembly: InternalsVisibleTo("ClassName")] - allow a specific class to be inherited
-class MyClass {}
+public sealed class MyClass {}
 
 Protection levels:
 	Top-level types(Classes, Structs, Interfaces) protection level: internal, public
@@ -7,7 +7,7 @@ Protection levels:
 	Enum protection level: none, always public
 	Everything else: public, protected, internal, private, protected internal, private protected
 
-Modifiers: static, readonly, const, 
+Modifiers: sealed, static, readonly, const 
 
 Passing a variable by reference:
 	ref
@@ -49,3 +49,7 @@ public enum Ingredients : long
 }
 
 Anonymous types: var x = new { Title = "Lord" };
+
+Inlining:
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	private static void Name() {}
