@@ -1,0 +1,56 @@
+Категория			Тип					Значение		  Пример
+Логический тип данных		bool					true или false		  true
+Символьный тип данных		char, wchar_t, char16_t, char32_t	Один из ASCII-символов	  ‘c’
+Тип данных с плавающей запятой	float, double, long double		Десятичная дробь	  3.14159
+Целочисленный тип данных	short, int, long, long long		Целое число		  64
+
+Тип			Минимальный размер(Bits/Byte)
+bool				8/1, true(1)/false(0)
+ 
+char				8/1, char16_t - UTF-16:16, char32_t - UTF-32:32, wchar_t -  широкий строковый литерал - const wchar_t *s = L"Hello, World!";
+short				16/2
+unsigned short			16/2
+int				32/4
+unsigned int			32/4
+long				64/8
+unsigned long			64/8
+long long			64/8
+unsigned long long		64/8
+
+float				32/4
+double				64/8
+long double			128/16
+
+pointer				64/8
+wchar_t				32/4
+size_t				32/4
+ptrdiff_t			32/4
+
+Используй sizeof()
+
+Размер/Тип		Диапазон значений
+1 байт signed		от -128 до 127
+1 байт unsigned		от 0 до 255
+2 байта signed		от -32 768 до 32 767
+2 байта unsigned	от 0 до 65 535
+4 байта signed		от -2 147 483 648 до 2 147 483 647
+4 байта unsigned	от 0 до 4 294 967 295
+8 байтов signed		от -9 223 372 036 854 775 808 до 9 223 372 036 854 775 807
+8 байтов unsigned	от 0 до 18 446 744 073 709 551 615
+
+<cstdint>:
+int8_t		1 байт signed		от -128 до 127
+uint8_t		1 байт unsigned		от 0 до 255
+int16_t		2 байта signed		от -32 768 до 32 767
+uint16_t	2 байта unsigned	от 0 до 65 535
+int32_t		4 байта signed		от -2 147 483 648 до 2 147 483 647
+uint32_t	4 байта unsigned	от 0 до 4 294 967 295
+int64_t		8 байт signed		от -9 223 372 036 854 775 808 до 9 223 372 036 854 775 807
+uint64_t	8 байт unsigned		от 0 до 18 446 744 073 709 551 615
+
+const char* str = ""; - C-style string
+std::string str2 = ""; - C++ string
+std::string str3 = str;
+std::string str4(str);
+str2.assign(str, str + 24);  // 24 is the size of str
+

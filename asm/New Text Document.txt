@@ -1,0 +1,151 @@
+word — 2-байтовый элемент данных (16-битный);
+
+doubleword — 4-байтовый (32-битный) элемент данных;
+
+quadword — 8-байтовый (64-битный) элемент данных;
+
+paragraph — 16-байтовая (128-битная) область;
+
+kilobyte — 1024 байт;
+
+megabyte — 1 048 576 байт.
+
+Бит			1	1	1	1	1	1	0	1
+Позиционное значение	128	64	32	16	8	4	2	1
+Номер бита		7	6	5	4	3	2	1	0
+
+1 + 4 + 8 + 16 + 32 + 64 + 128 = 253 = 11111101
+
+Шестнадцатеричная система счисления состоит из 16 символов: 0-9 и A-F
+Десятичное представление | Двоичное представление | Шестнадцатеричное представление
+0	0	0
+1	1	1
+2	10	2
+3	11	3
+4	100	4
+5	101	5
+6	110	6
+7	111	7
+8	1000	8
+9	1001	9
+10	1010	A
+11	1011	B
+12	1100	C
+13	1101	D
+14	1110	E
+15	1111	F
+
+Бинарное число 1000 (8) 1100 (C) 1101 (D) 0001 (1) эквивалентно шестнадцатеричному 8CD1.
+Шестнадцатеричное число FAD8 эквивалентно двоичному 1111 (F) 1010 (A) 1101 (D) 1000 (8).
+
+Число:    0824H
+Регистр: 08 | 24
+Память:  24 | 08
+
+Цикл выполнения:
+	Шаг №1: Извлечение инструкции из памяти.
+   	Шаг №2: Расшифровка или идентификация инструкции.
+   	Шаг №3: Выполнение инструкции.
+
+Есть 2 вида адресов памяти:
+   абсолютный адрес — прямая ссылка на конкретное местоположение;
+   сегментный адрес (или «смещение») — адрес сегмента памяти со значением смещения.
+
+Память:
+	Stack -> DOWN
+	Heap <- UP
+	.bss   // объявления переменных без инициализации, global, static
+	.data  // инициализированных данных, global, static
+	.text  // код программы, строки, const, vector table
+
+.dec   // text + data + bss
+FLASH memory  // text + data
+.word  // место под обьекты(массив и тд.)
+.rodata(.rdata)  // только для чтения
+;  // коментарий
+_start  // точка входа
+
+
+В ассемблере есть три вида стейтментов:
+	Выполняемые инструкции (или просто «инструкции») — сообщают процессору, что нужно делать. Каждая инструкция хранит в себе код операции (или «опкод») и генерирует одну инструкцию на машинном языке.
+        Директивы ассемблера — сообщают программе об аспектах компиляции. Они не генерируют инструкции на машинном языке.
+        Макросы — являются простым механизмом вставки кода.
+
+[метка]   mnemonic   [операнды]   [; комментарий]
+
+section	.text
+   global _start    ; необходимо для линкера (ld)
+	
+_start:	            ; сообщает линкеру стартовую точку
+   mov	edx,len     ; длина строки 
+   mov	ecx,msg     ; строка
+   mov	ebx,1       ; дескриптор файла (stdout)
+   mov	eax,4       ; номер системного вызова (sys_write)
+   int	0x80        ; вызов ядра
+	
+   mov	eax,1       ; номер системного вызова (sys_exit)
+   int	0x80        ; вызов ядра 
+ 
+section	.data
+msg db 'Hello, world!', 0xa  ; содержимое строки для вывода
+len equ $ - msg              ; длина строки
+
+nasm -f elf hello.asm
+ld -m elf_i386 -s -o hello hello.o
+./hello
+
+The 64-bit versions of the 'original' x86 registers are named:
+
+rax - register a extended
+rbx - register b extended
+rcx - register c extended
+rdx - register d extended
+rbp - register base pointer (start of stack)
+rsp - register stack pointer (current location in stack, growing downwards)
+rsi - register source index (source for data copies)
+rdi - register destination index (destination for data copies)
+The registers added for 64-bit mode are named:
+
+r8 - register 8
+r9 - register 9
+r10 - register 10
+r11 - register 11
+r12 - register 12
+r13 - register 13
+r14 - register 14
+r15 - register 15
+These may be accessed as:
+
+64-bit registers using the 'r' prefix: rax, r15
+32-bit registers using the 'e' prefix (original registers: e_x) or 'd' suffix (added registers: r__d): eax, r15d
+16-bit registers using no prefix (original registers: _x) or a 'w' suffix (added registers: r__w): ax, r15w
+8-bit registers using 'h' ("high byte" of 16 bits) suffix (original registers - bits 8-15: _h): ah, bh
+8-bit registers using 'l' ("low byte" of 16 bits) suffix (original registers - bits 0-7: _l) or 'b' suffix (added registers: r__b): al, bl, r15b
+Usage during syscall/function call:
+
+First six arguments are in rdi, rsi, rdx, rcx, r8d, r9d; remaining arguments are on the stack.
+For syscalls, the syscall number is in rax. For procedure calls, rax should be set to 0.
+Return value is in rax.
+The called routine is expected to preserve rsp,rbp, rbx, r12, r13, r14, and r15 but may trample any other registers.
+
+add %r10,%r11    // add r10 and r11, put result in r11
+add $5,%r10      // add 5 to r10, put result in r10
+call label       // call a subroutine / function / procedure
+cmp %r10,%r11    // compare register r10 with register r11.  The comparison sets flags in the processor status register which affect conditional jumps.
+cmp $99,%r11     // compare the number 99 with register r11.  The comparison sets flags in the processor status register which affect conditional jumps.
+div %r10         // divide rax by the given register (r10), places quotient into rax and remainder into rdx (rdx must be zero before this instruction)
+inc %r10         // increment r10
+jmp label        // jump to label
+je  label        // jump to label if equal
+jne label        // jump to label if not equal
+jl  label        // jump to label if less
+jg  label        // jump to label if greater
+mov %r10,%r11    // move data from r10 to r11
+mov $99,%r10     // put the immediate value 99 into r10
+mov %r10,(%r11)  // move data from r10 to address pointed to by r11
+mov (%r10),%r11  // move data from address pointed to by r10 to r10
+mul %r10         // multiplies rax by r10, places result in rax and overflow in rdx
+push %r10        // push r10 onto the stack
+pop %r10         // pop r10 off the stack
+ret              // routine from subroutine (counterpart to call)
+syscall          // invoke a syscall (in 32-bit mode, use "int $0x80" instead)

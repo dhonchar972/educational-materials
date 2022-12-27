@@ -1,0 +1,15 @@
+struct Employee
+{
+    short id;
+    int age;
+    double salary;
+};
+
+Employee john = { 5, 27, 45000.0 };
+Employee john { 5, 27, 45000.0 };  // uniform-инициализация(С++11)
+
+struct Triangle  // C++11
+{
+    double length = 2.0;
+    double width = 2.0;
+};

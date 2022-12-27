@@ -1,0 +1,44 @@
+int x = 12;
+int* p = &x;
+int& r = x;
+
+print(*p);
+print(r);
+
+int *ptr(NULL);  // C-style
+int *ptr(0);  // нулевой указатель
+int *ptr1 = 0;
+int *ptr = nullptr;
+
+int array[4] = { 5, 8, 6, 4 };
+std::cout << sizeof(array) << '\n'; // выведется sizeof(int) * длина array
+int *ptr = array;
+std::cout << sizeof(ptr) << '\n'; // выведется размер указателя
+print(*(array+1));
+
+int *ptr = new int;  // если памяти не хватает - бросает bad_alloc
+int *value = new (std::nothrow) int;  // не бросает bad_alloc, может быть null
+int *ptr = new int(7);
+int *ptr = new int {8};
+delete ptr;
+ptr = 0;
+
+int *array = new int[length];
+int *array = new int[length]();  // инициализация нулями
+char *array = new char[14] { "Hello, world!" };
+delete[] array;
+array = 0;
+
+const int *const p;
+
+void foo(int *ptr);  // foo(&v);
+void foo(int &ref);  // foo(v);
+
+for (const auto &number : math) {}
+
+void *ptr;
+int *int_ptr = static_cast<int*>(ptr);
+
+int **ptrptr = &ptr;
+int **array = new int*[20];
+int **array = new int[15][7];

@@ -1,0 +1,38 @@
+alignas (C++11)
+alignof (C++11)
+and
+and_eq
+asm
+auto
+bitand
+bitor
+compl
+constexpr (C++11) - сообщает компилятору, что текущая переменная является константой времени компиляции - constexpr int sum = 4 + 5;
+decltype (C++11)
+explicit
+export
+extern - внешняя глобальная переменная
+inline
+mutable	
+noexcept (C++11)
+not
+not_eq
+nullptr (C++11)
+or
+or_eq
+register
+static_assert (C++11)
+thread_local (C++11)
+template
+typedef
+typeid() - информация о типе во время выполнения
+typename
+union
+using
+virtual
+volatile
+xor
+xor_eq
+
+override
+final

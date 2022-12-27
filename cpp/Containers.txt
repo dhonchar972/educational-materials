@@ -1,0 +1,22 @@
+std::array<int, 4> myarray; // объявляем массив типа int длиной 4
+std::array<int, 4> myarray = { 8, 6, 4, 1 };
+std::array<int, 4> myarray { 8, 6, 4, 1 };
+myarray.at(1) = 7;
+myarray.at(8) = 15;  // std::out_of_range
+auto l = myarray.size();
+std::sort(myarray.begin(), myarray.end());
+
+void printLength(const std::array<double, 4> &myarray)
+{
+    std::cout << "length: " << myarray.size();
+
+    for (const auto &element : myarray)
+        std::cout << element << ' ';
+}
+
+
+std::vector<int> array; 
+std::vector<int> array = { 10, 8, 6, 4, 2, 1 };
+std::vector<int> array { 10, 8, 6, 4, 2, 1 };
+array.size();
+array.resize(7);

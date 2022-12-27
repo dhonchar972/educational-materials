@@ -1,0 +1,29 @@
+statement - одна команда, заканчивается ";"
+declaration - объявление - int x; неинициализированная переменная, хранит мусор, не скомпилируется в новых версиях
+assignment - присваивание - x = 5;  x - "l-value", 5 - "r-value"
+initialization - инициализация(определение) - int a = 8;
+expression - x + y
+caller - вызывающая функция
+прототип функции - int add(int, int); // прототип - declaration(объявление), реализация - definition(определение)
+header guards - #ifndef ADD_H #define ADD_H ... #endif //или// #pragma once
+
+static в файле - скывает обьект внутри файла, наследие С
+static в функции - инициализируется при первом вызове функции, живет до конца программы
+static в классе - классический вариант
+
+type(variable) - C-style cast
+static_cast<type>(variable) - проверяемый каст во время компиляции
+dynamic_cast<type>(variable) - проверяемый каст во время выполнения
+const_cast<type>(variable) - отбрасывает константу
+reinterpret_cast<type>(variable) - конвертация одного типа в другой
+
+bool b1 = true; // копирующая инициализация
+bool b2(false); // прямая инициализация
+bool b3 { true }; // uniform-инициализация (C++11)
+b3 = false; // операция присваивания
+bool b1 = !true; // значение b1 - false
+bool b2(!false); // значение b2 - true
+
+char ch1(97); // инициализация переменной типа char целым числом 97
+char ch2('a'); // инициализация переменной типа char символом 'a' (97)
+

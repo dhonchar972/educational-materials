@@ -1,0 +1,12 @@
+#ifdef - if defined
+#ifndef - if not defined
+#if
+#elif
+#else
+#endif - close
+
+#undef
+#define
+#include
+#pragma once
+#pragma warn

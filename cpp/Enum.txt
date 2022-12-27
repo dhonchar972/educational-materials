@@ -1,0 +1,41 @@
+enum Colors
+{
+    COLOR_RED,
+    COLOR_BROWN,
+    COLOR_GRAY,
+};
+
+Colors paint = COLOR_RED;
+Colors house(COLOR_GRAY);
+
+if (color == COLOR_RED)
+    std::cout << "Red";
+else if (color == COLOR_BROWN)
+    std::cout << "Brown";
+else if (color == COLOR_GRAY)
+    std::cout << "Gray";
+
+enum class Colors
+{
+    RED,
+    BROWN,
+    GRAY,
+};
+
+Colors color = Colors::RED;
+
+switch (color)
+{
+case COLOR_RED:
+    std::cout << "Red";
+    break;
+case COLOR_BROWN:
+    std::cout << "Brown";
+    break;
+case COLOR_GRAY:
+    std::cout << "Gray";
+    break;
+default:
+    std::cout << "Not found!";
+    break;
+}
