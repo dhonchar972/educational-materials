@@ -1,0 +1,6 @@
+ClassName(int numerator=0, int denominator=1) : m_numerator(numerator), m_denominator(denominator) { assert(denominator != 0); }  // Конструктор по умолчанию
+ClassName(const ClassName &className) : m_numerator(className.m_numerator), m_denominator(className.m_denominator) {}  // Конструктор копирования
+explicit SomeString(int a) { m_string.resize(a); }  // выделяем строку размером a
+SomeString(int a) { m_string.resize(a); }  // конструктор неявного преобразования
+
+	

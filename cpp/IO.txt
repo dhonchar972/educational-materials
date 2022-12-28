@@ -23,6 +23,12 @@ int main () {
    return 0;
 }
 
+cin — класс istream_withassign, связанный со стандартным вводом (обычно это клавиатура)
+cout — класс ostream_withassign, связанный со стандартным выводом (обычно это монитор)
+cerr — класс ostream_withassign, связанный со стандартной ошибкой (обычно это монитор), обеспечивающий небуферизованный вывод
+clog — класс ostream_withassign, связанный со стандартной ошибкой (обычно это монитор), обеспечивающий буферизованный вывод
+
+
 d or i	Signed decimal integer - 392
 u	Unsigned decimal integer - 7235
 o	Unsigned octal - 610

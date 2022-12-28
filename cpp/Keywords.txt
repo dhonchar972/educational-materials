@@ -3,7 +3,6 @@ alignof (C++11)
 and
 and_eq
 asm
-auto
 bitand
 bitor
 compl
@@ -12,16 +11,14 @@ decltype (C++11)
 explicit
 export
 extern - внешняя глобальная переменная
-inline
+inline - при компиляции вызов функции заменяется копией содержимого самой функции, и ресурсы, которые могли бы быть потрачены на вызов этой функции, сохраняются. объем кода увеличивается(порой значительно)
 mutable	
 noexcept (C++11)
 not
 not_eq
-nullptr (C++11)
 or
 or_eq
 register
-static_assert (C++11)
 thread_local (C++11)
 template
 typedef
@@ -29,10 +26,9 @@ typeid() - информация о типе во время выполнения
 typename
 union
 using
-virtual
 volatile
 xor
 xor_eq
 
 override
-final
+final 

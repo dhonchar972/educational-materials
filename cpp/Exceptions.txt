@@ -1,0 +1,14 @@
+std::cerr - выводит сообщения об ошибках в консоль (как и cout), но только эти сообщения можно еще и перенаправить в отдельный файл с ошибками
+std::exception
+
+class ArrayException: public std::exception
+{
+private:
+	std::string m_error;
+public:
+	ArrayException(std::string error) : m_error(error) {}
+ 
+	// Возвращаем std::string в качестве константной строки C-style
+	//const char* what() const { return m_error.c_str(); } // до C++11
+	const char* what() const noexcept { return m_error.c_str(); } // C++11 и выше
+};

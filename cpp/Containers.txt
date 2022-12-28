@@ -18,5 +18,49 @@ void printLength(const std::array<double, 4> &myarray)
 std::vector<int> array; 
 std::vector<int> array = { 10, 8, 6, 4, 2, 1 };
 std::vector<int> array { 10, 8, 6, 4, 2, 1 };
+array.at(0);
 array.size();
+array.capacity()
 array.resize(7);
+array.reserve(40);
+
+
+std::list
+std::deque
+std::forward_list
+std::basic_string
+std::span
+
+std::set
+std::multiset
+std::map
+std::multimap
+std::unordered_map
+
+std::stack
+std::queue
+std::priority_queue
+
+std::string
+std::wstring
+
+//Итераторы
+begin()
+end()
+cbegin()
+cend()
+container::iterator
+container::const_iterator
+
+std::vector<int>::const_iterator it; // объявляем итератор только для чтения
+it = myVector.begin(); // присваиваем ему начальный элемент вектора
+while (it != myVector.end()) // пока итератор не достигнет последнего элемента
+{
+     std::cout << *it << " "; // выводим значение элемента, на который указывает итератор
+     ++it; // и переходим к следующему элементу
+}
+
+//Алгоритмы STL
+min_element() / max_element()
+find() / insert()
+sort() / reverse()

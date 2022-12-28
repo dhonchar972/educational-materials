@@ -42,3 +42,7 @@ int *int_ptr = static_cast<int*>(ptr);
 int **ptrptr = &ptr;
 int **array = new int*[20];
 int **array = new int[15][7];
+
+int (*const fcnPtr)(double, const char*);  // указатель на функцию
+void selectionSort(int *array, int size, bool (*comparisonFcn)(int, int) = ascending);
+bool validate(int a, int b, std::function<bool(int, int)> fcn);  // std::function - C++11

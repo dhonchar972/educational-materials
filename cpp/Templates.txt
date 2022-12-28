@@ -1,0 +1,27 @@
+template <typename T> // объявление параметра шаблона функции, typename | class
+T max(T a, T b)
+{
+    return (a > b) ? a : b;
+}
+template <typename T>
+const T& max(const T& a, const T& b)
+{
+    return (a > b) ? a : b;
+}
+
+template <class T>
+T average(T *array, int length)
+{
+    T sum = 0;
+    for (int count=0; count < length; ++count)
+        sum += array[count];
+ 
+    sum /= length;
+    return sum;
+}
+
+template <>  // специализация, если передаваемый тип char* - будет вызвана специализация
+Repository<char*>::Repository(char* value)
+{
+     m_value = value;
+}

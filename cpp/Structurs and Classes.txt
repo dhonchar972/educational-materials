@@ -13,3 +13,63 @@ struct Triangle  // C++11
     double length = 2.0;
     double width = 2.0;
 };
+
+class DateClass : virtual public Parent  // private by default
+{
+public:
+    int m_day;
+    int m_month;
+    static int m_year = 0;
+ 
+    DateClass() : m_day(0), m_month(0)
+    {
+	//this->m_day = 0;
+        //this->m_month = 0;
+    }
+    DateClass(int day, int month=1) : DateClass(), m_day{0}, m_month{0}
+    {
+        static_assert(month != 0);
+        //m_day = day;
+        //m_month = month;
+        //DateClass();
+    }
+    virtual ~DateClass() {}
+
+    virtual void virtualFoo() = 0;  // чисто виртуальная функция
+    void DateClass::virtualFoo() { printf(""); }  // реализация по умолчанию
+
+    static void foo()
+    {
+        std::printf("Foo call");
+    }
+    void print()
+    {
+        std::cout << m_day << "/" << m_month << "/" << m_year;
+    }
+    const std::string& getName() const
+    {
+        return name;
+    }
+    void setName(const char *name)
+    {
+        m_name = name;
+    }
+
+    //friend void friendFoo(const DateClass &dateClass, const AnotherClass &anotherClass);
+    friend void AnotherClass::anotherClassFoo(DateClass &dateClass);
+
+    friend Dollars operator+(const Dollars &d1, const Dollars &d2);
+
+    friend std::ostream& operator<<(std::ostream &out, const Point &point);
+    friend std::istream& operator>>(std::istream &in, Point &point);
+private:
+    using Parent::m_value;
+    
+    std::string m_name = "";
+
+    void count() const  // error, cant modify
+    {
+	static int c = 0;
+        ++c;
+    }
+};
