@@ -25,17 +25,18 @@ array.resize(7);
 array.reserve(40);
 
 
-std::list
+std::list - двухсвязный список
 std::deque
-std::forward_list
+std::forward_list - односвязный список
 std::basic_string
 std::span
 
-std::set
-std::multiset
-std::map
-std::multimap
-std::unordered_map
+std::set - красно-черное дерево
+std::map - красно-черное дерево
+std::multiset - красно-черное дерево, не уникальные ключи 
+std::multimap - красно-черное дерево, не уникальные ключи
+std::unordered_set - хеш таблица
+std::unordered_map - хеш таблица
 
 std::stack
 std::queue
@@ -43,6 +44,7 @@ std::priority_queue
 
 std::string
 std::wstring
+std::string_view
 
 //Итераторы
 begin()

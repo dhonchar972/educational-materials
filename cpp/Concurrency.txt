@@ -1,0 +1,30 @@
+std::mutex
+std::timed_mutex
+std::recursive_mutex
+std::recursive_timed_mutex
+std::shared_mutex
+std::shared_timed_mutex
+
+std::lock_guard
+std::unique_lock
+std::shared_lock
+std::scoped_lock
+
+std::call_once
+
+std::thread
+std::future
+std::async
+
+std::condition_variable
+
+.join()
+
+void critical_function()
+{
+ lock_guard<mutex> l {some_mutex};
+ // критический раздел
+}
+
+auto x (async(launch::async, f, 1, 2, 3));
+cout << x.get();
