@@ -1,0 +1,14 @@
+docker build - собрать образ Docker
+docker run - запустить образ Docker в качестве контейнера
+docker commit - сохранить контейнер Docker в качестве образа
+docker tag - присвоить тег образу Docker
+
+docker build .
+docker tag 66c76cea05bb todoapp
+docker run -i -t -p 8000:8000 --name example1 todoapp
+docker ps -a // посмотреть посмотреть контейнери
+docker start example1
+docker diff example1 // просмотреть изменения
+
+docker pull username/application
+docker rm -f application
