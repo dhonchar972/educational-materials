@@ -1,0 +1,10 @@
+
+C#:
+	var ls = new List<int>() { 1, 2, 3, 4, 5, 6 };
+    ls = ls.Select(x => { ++x; return x; }).ToList();
+    ls.ForEach(Console.WriteLine);
+	
+Java:
+	var ls = List.of(1, 2, 3, 4, 5, 6);
+	ls = ls.stream().map(x -> ++x).toList();
+	ls.forEach(System.out::println);
