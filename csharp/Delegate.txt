@@ -1,0 +1,86 @@
+class Account
+{
+    // public delegate void AccountHandler(string message); // Хранит ссылки на функции
+    public event Action<string>? Notify;                    // void Action<in T>| Func<in T, out R> | bool Predicate<in T> 
+	                                                        // 16 вход + 0 выход| 16 вход + 1 выход | 1 вход + bool выход  
+    public int Sum { get; private set; }                    // Вызов делегата(функции в нем): .Invoke(params)
+	
+    public Account(int sum) {
+	    Sum = sum;
+	}
+    
+    public void Put(int sum) {
+        Sum += sum;
+        Notify?.Invoke($"На счет поступило: {sum}");        // Вызов события 
+    }
+	
+    public void Take(int sum) {
+        if (Sum >= sum) {
+            Sum -= sum;
+            Notify?.Invoke($"Со счета снято: {sum}");       // Вызов события
+        } else {
+            Notify?.Invoke($"Недостаточно денег на счете. Текущий баланс: {Sum}"); ;
+        }
+    }
+}
+
+void DisplayMessage(string message) {                       // Создаем функцию, которую будем передавать в делегат
+    Console.WriteLine(message);
+}
+
+// Main()
+Account account = new Account(100);
+account.Notify += DisplayMessage;                           // Добавляем обработчик для события Notify(пхаем функцию в событие которое принимает только те функции, которые соответствуют сегнатуре делегата)
+account.Put(20);
+
+// Java
+@FunctionalInterface
+public interface MyFunction<T, U, V, R> {                  // java.util.function.*; Function | Consumer | Supplier | Predicate || UnaryOperator | BinaryOperator
+    R apply(T t, U u, V v);                                // Bi + Название делегата == принимает два значения(на вход либо выход)
+}                                                          // Название приметива + Название делегата == Реализация для приметивов
+                                                           // Стандартный вызов: .apply(params)
+@FunctionalInterface
+public interface Consumer<T> {                             // 1 вход + 0 выход
+    void accept(T t);                                      // ВЫЗОВ: .accept(param)
+}
+
+@FunctionalInterface
+public interface Supplier<T> {                             // 0 вход + 1 выход
+    T get();                                               // ВЫЗОВ: .get()
+}
+
+@FunctionalInterface
+public interface Predicate<T> {                            // 1 вход + boolean выход
+    boolean test(T t);                                     // ВЫЗОВ: .test(param)
+}
+
+@FunctionalInterface
+public interface UnaryOperator<T> {                        // 1 вход + 1 выход (одинаковые типы)
+    T apply(T t);
+}
+
+
+@FunctionalInterface
+public interface BinaryOperator<T> {                       // 2 вход + 1 выход (одинаковые типы)
+    T apply(T t1, T t2);
+}
+
+@FunctionalInterface
+public interface Function<T, R> {                          // 1 вход + 1 выход
+    R apply(T t);
+	
+    default <V> Function<V, R> compose(Function<? super V, ? extends T> before) {
+        Objects.requireNonNull(before);
+        return (V v) -> apply(before.apply(v));
+    }
+	
+    default <V> Function<T, V> andThen(Function<? super R, ? extends V> after) {
+        Objects.requireNonNull(after);
+        return (T t) -> after.apply(apply(t));
+    }
+	
+    static <T> Function<T, T> identity() {
+        return t -> t;
+    }
+}
+
